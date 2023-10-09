@@ -5,7 +5,7 @@ import { validateBody } from "../../decorators/index.js";
 import {
   contactAddSchema,
   contactUpdateFavoriteSchema,
-} from "../../models/Contact.js";
+} from "../../models/index.js";
 
 const contactsRouter = express.Router();
 
