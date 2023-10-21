@@ -1,7 +1,7 @@
 import { Contact } from "../../models/index.js";
 import { HttpError } from "../../helpers/index.js";
 
-export const updateStatusContact = async (req, res) => {
+const updateStatusContact = async (req, res) => {
   const { id } = req.params;
   const { _id: owner } = req.user;
 
@@ -16,3 +16,5 @@ export const updateStatusContact = async (req, res) => {
 
   res.status(201).json(result);
 };
+
+export default updateStatusContact;

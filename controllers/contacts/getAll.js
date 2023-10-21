@@ -1,6 +1,6 @@
 import { Contact } from "../../models/index.js";
 
-export const getAll = async (req, res, next) => {
+const getAll = async (req, res, next) => {
   const { _id: owner } = req.user;
   const { favorite = false, page = 1, limit = 10 } = req.query;
 
@@ -17,3 +17,5 @@ export const getAll = async (req, res, next) => {
 
   res.json(result);
 };
+
+export default getAll;

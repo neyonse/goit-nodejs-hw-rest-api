@@ -1,7 +1,7 @@
 import { HttpError } from "../../helpers/index.js";
 import { User } from "../../models/index.js";
 
-export const updateSubscription = async (req, res) => {
+const updateSubscription = async (req, res) => {
   const subscriptionsOptions = ["starter", "pro", "business"];
   const { subscription } = req.body;
 
@@ -20,3 +20,5 @@ export const updateSubscription = async (req, res) => {
     subscription: user.subscription,
   });
 };
+
+export default updateSubscription;

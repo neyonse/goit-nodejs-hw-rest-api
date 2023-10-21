@@ -1,7 +1,7 @@
 import { Contact } from "../../models/index.js";
 import { HttpError } from "../../helpers/index.js";
 
-export const getById = async (req, res, next) => {
+const getById = async (req, res, next) => {
   const { id } = req.params;
   const { _id: owner } = req.user;
 
@@ -16,3 +16,5 @@ export const getById = async (req, res, next) => {
 
   res.json(result);
 };
+
+export default getById;
