@@ -5,7 +5,7 @@ import { HttpError } from "../../helpers/index.js";
 
 const { JWT_SECRET } = process.env;
 
-export const signin = async (req, res) => {
+const signin = async (req, res) => {
   const { email, password } = req.body;
 
   const user = await User.findOne({ email });
@@ -34,3 +34,5 @@ export const signin = async (req, res) => {
     },
   });
 };
+
+export default signin;
