@@ -23,6 +23,9 @@ const userSchema = new Schema(
       enum: ["starter", "pro", "business"],
       default: "starter",
     },
+    avatarURL: {
+      type: String,
+    },
     token: {
       type: String,
     },
@@ -51,6 +54,10 @@ export const userSigninSchema = Joi.object({
 
 export const userUpdateSubscriptionSchema = Joi.object({
   subscription: Joi.string().required(),
+});
+
+export const userUpdateAvatarSchema = Joi.object({
+  avatarURL: Joi.string(),
 });
 
 const User = model("user", userSchema);
