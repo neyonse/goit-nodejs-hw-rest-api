@@ -4,6 +4,7 @@ import { isEmptyBody, authenticate, upload } from "../../middlewares/index.js";
 import { validateBody } from "../../decorators/index.js";
 import {
   userSignupSchema,
+  userVerifyEmailSchema,
   userSigninSchema,
   userUpdateSubscriptionSchema,
   userUpdateAvatarSchema,
@@ -17,6 +18,15 @@ authRouter.post(
   isEmptyBody,
   validateBody(userSignupSchema),
   authController.signup
+);
+
+authRouter.get("/verify/:verificationToken", authController.verifyEmail);
+
+authRouter.post(
+  "/verify",
+  isEmptyBody,
+  validateBody(userVerifyEmailSchema),
+  authController.resendVerifyEmail
 );
 
 authRouter.post(
